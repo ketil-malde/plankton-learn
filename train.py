@@ -1,5 +1,11 @@
 # The imported generators expect to find training data in data/train
 # and validation data in data/validation
+
+import os
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
+
+
 from generators import train_generator, validation_generator
 
 from keras.models import load_model
@@ -20,7 +26,7 @@ else:
     model = load_model(save_name(last))
 
 # Use log to file
-logger = CSVLogger('train.log', append=True, separator='       ')
+logger = CSVLogger('train.log', append=True, separator='    ')
 
 
 def train_step(i):
