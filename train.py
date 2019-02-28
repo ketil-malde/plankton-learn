@@ -30,7 +30,7 @@ else:
     model = load_model(save_name(last))
 
 # Use log to file
-logger = CSVLogger(C.logfile, append=True, separator='       ')
+logger = CSVLogger(C.logfile, append=True, separator='\t')
 
 # we use SGD with a low learning rate
 model.compile(optimizer=SGD(lr=0.0001, momentum=0.9),
