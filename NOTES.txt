@@ -1,3 +1,20 @@
+
+Dockerized setup:
+
+0. Make sure you have docker, make, and CUDA drivers installed (for
+running on a GPU), and that your user is part of the 'docker' group.
+
+1. Check the configuration options in the Makefile, especially
+mounting the data disk and GPU options.  If you are going to use
+something else than data-65 from the plankton set, you may have to
+edit src/config.py as well.
+
+2. make train
+
+3. make test
+
+Instructions for non-dockerized setup
+
 0. Install necessary software:
 
    pip install keras
